@@ -8,14 +8,14 @@ import { NextMiddleware } from '../next/next.middleware';
 
 @Module({
   imports: [
-    // SignModule,
+    SignModule,
     NextModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'wangdong123!',
+      password: 'root',
       database: 'gas',
       synchronize: true,
       entities: ['dist/entities/*.js'],
