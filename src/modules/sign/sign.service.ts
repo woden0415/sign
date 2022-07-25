@@ -1,4 +1,4 @@
-import { EnumSignStatus, Sign } from './../../entities/Sign';
+import { EnumSignStatus, Sign } from './Sign.entity';
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';

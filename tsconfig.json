@@ -20,7 +20,7 @@
     ],
     "allowJs": true,
     "strict": false,
-    "noEmit": true,
+    "noEmit": false,
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "emitDecoratorMetadata": true,

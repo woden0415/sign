@@ -1,3 +1,4 @@
+import { Sign } from './../sign/Sign.entity';
 import { SignModule } from './../sign/sign.module';
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -18,7 +19,7 @@ import { NextMiddleware } from '../next/next.middleware';
       password: 'root',
       database: 'gas',
       synchronize: true,
-      entities: ['dist/entities/*.js'],
+      entities: [Sign],
       migrations: [],
       subscribers: [],
     })],

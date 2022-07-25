@@ -1,4 +1,4 @@
-import { Sign } from './../../entities/Sign';
+import { Sign } from './Sign.entity';
 import { Module } from '@nestjs/common';
 import { SignController } from './sign.controller';
 import { SignService } from './sign.service';

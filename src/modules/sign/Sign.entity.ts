@@ -1,5 +1,4 @@
 import { Column, Entity, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from 'typeorm';
-import { ComposeByTime } from './compose/ComposeByTime';
 
 export enum EnumSignStatus {
   initial = 'initial',

@@ -7,8 +7,8 @@ import axios from 'axios';
 export default () => {
   const createQrCode = async () => {
     const _mobileUrl = 'http://localhost:3000/mobile?1=1'
-    const signId = axios.post('http://localhost:3000/sign/insert')
-    const _url = `${_mobileUrl}&id=${signId}`
+    const resp = await axios.post('http://localhost:3000/sign/insert')
+    const _url = `${_mobileUrl}&id=${resp.data}`
     setUrl(_url)
     setShow(true)
   }
@@ -22,7 +22,8 @@ export default () => {
       <button onClick={createQrCode}>生成签字条码</button>
       <p>生成后，请用手机浏览器或者微信扫描</p>
       <br />
-      {isShow ? <QRCodeCanvas value={ url } /> : null}
+      {isShow ? <QRCodeCanvas value={url} /> : null}
+      {isShow ? <div>{ url}</div> : null}
     </React.Fragment>
   )
 };
