@@ -1,6 +1,7 @@
 import { SignDto } from './dto/Sign.dto';
 import { Body, Controller, Post } from "@nestjs/common";
 import { SignService } from "./sign.service";
+import { Sign } from './Sign.entity';
 
 @Controller("sign")
 export class SignController {
@@ -9,7 +10,7 @@ export class SignController {
 
   // 插入一条记录，返回一个记录id
   @Post("/insert")
-  async insert(): Promise<number> {
+  async insert(): Promise<Sign> {
     const resp = await this.signService.insert();
     return resp;
   }

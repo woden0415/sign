@@ -20,12 +20,12 @@ export class Sign {
   @Column({ name: 'create_by', comment: '创建人' })
   createBy: string;
 
-  @CreateDateColumn({ name: 'create_time', type: 'datetime', comment: '创建时间' })
+  @CreateDateColumn({ name: 'create_time', type: 'timestamp', comment: '创建时间' })
   createdTime: Date;
 
   @Column({ name: 'update_by', comment: '更新人' })
   updateBy: string;
 
-  @UpdateDateColumn({ name: 'update_time', type: 'datetime', comment: '更新时间' })
+  @UpdateDateColumn({ name: 'update_time', type: 'timestamp', comment: '更新时间' })
   updateTime: Date;
 }

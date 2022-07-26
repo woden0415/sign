@@ -13,12 +13,12 @@ export class SignService {
     private signRepository: Repository<Sign>,
   ) { }
 
-  async insert(): Promise<number> {
+  async insert(): Promise<Sign> {
     const _sign = new Sign();
     _sign.createBy = 'admin'
     _sign.updateBy = 'admin'
     const resp = await this.signRepository.save(_sign)
-    return resp.id
+    return resp
   }
 
   async findOne(id: number): Promise<Sign> {
