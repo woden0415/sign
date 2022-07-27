@@ -1,0 +1,21 @@
+.m_wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: calc(100vh);
+  padding: 0 10px
+}
+.m_header_wrapper {
+  height: 50px;
+}
+.m_body_wrapper {
+  flex: 1;
+}
+.body_canvas_wrapper {
+  border: 1px solid red;
+}
+.m_footer_wrapper {
+  position: absolute;
+  bottom: 40px;
+  right: 40px
+}
