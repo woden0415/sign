@@ -31,4 +31,14 @@ export class SignController {
   delete(): any {
     // return this.signService.update();
   }
+  
+  @Post("/clear")
+  async clear(): Promise<string> { 
+    try {
+      await this.signService.clear();
+      return Promise.resolve("清空成功");
+    } catch (error) {
+      return Promise.resolve("清空失败");
+    }
+  }
 }

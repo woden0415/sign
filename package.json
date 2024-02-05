@@ -6,7 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "cross-env tsnd --project tsconfig.server.json --ignore-watch .next --cls src/main.ts",
+    "dev": "cross-env environment=development tsnd --project tsconfig.server.json --ignore-watch .next --cls src/main.ts ",
+    "dev:production": "cross-env environment=production tsnd --project tsconfig.server.json --ignore-watch .next --cls src/main.ts ",
     "dev:debug": "cross-env tsnd --debug --watch --project tsconfig.server.json --ignore-watch .next --cls src/main.ts",
     "prebuild": "rimraf dist",
     "build": "nest build",

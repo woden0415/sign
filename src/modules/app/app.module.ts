@@ -7,22 +7,38 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { NextModule } from '../next/next.module';
 import { NextMiddleware } from '../next/next.middleware';
 
+console.log(process.env.environment + "__")
+const db = {
+  development: {
+    type: 'mysql',
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    password: 'wangdong',
+    database: 'sign',
+    synchronize: true,
+    entities: [Sign],
+    migrations: [],
+    subscribers: [],
+  },
+  production: {
+    type: 'mysql',
+    host: 'mysql.sqlpub.com',
+    port: 3306,
+    username: 'woden0415',
+    password: 'g9YL0rJs3ozDdxoF',
+    database: 'sign',
+    synchronize: true,
+    entities: [Sign],
+    migrations: [],
+    subscribers: [],
+  }
+}
 @Module({
   imports: [
     SignModule,
     NextModule,
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'wangdong',
-      database: 'sign',
-      synchronize: true,
-      entities: [Sign],
-      migrations: [],
-      subscribers: [],
-    })
+    TypeOrmModule.forRoot(db[process.env.environment])
   ],
   controllers: [AppController],
   providers: [AppService],

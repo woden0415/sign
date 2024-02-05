@@ -39,4 +39,8 @@ export class SignService {
     if (_sign.status === EnumSignStatus.done) return Promise.reject('当前签字已完成，请勿重复操作')
     if(_sign.status === EnumSignStatus.overdue) return Promise.reject('当前签字已过期，请重新生成')
   }
+  
+  clear() { 
+    return this.signRepository.clear()
+  }
 }
