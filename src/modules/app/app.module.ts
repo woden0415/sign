@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { NextModule } from '../next/next.module';
 import { NextMiddleware } from '../next/next.middleware';
+import { ConfigModule } from '@nestjs/config'
 
 console.log(process.env.environment + "__")
 const db = {
@@ -38,7 +39,8 @@ const db = {
   imports: [
     SignModule,
     NextModule,
-    TypeOrmModule.forRoot(db[process.env.environment])
+    TypeOrmModule.forRoot(db[process.env.environment]),
+    ConfigModule.forRoot()
   ],
   controllers: [AppController],
   providers: [AppService],

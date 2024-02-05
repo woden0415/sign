@@ -10,4 +10,6 @@ async function bootstrap() {
     app.listen(port);
   })
 }
-bootstrap();
+bootstrap().then(() =>
+  console.log(`Application is running on: ${process.env.PORT || 3000}`),
+);
