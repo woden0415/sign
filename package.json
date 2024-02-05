@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "dev": "cross-env tsnd --project tsconfig.server.json --ignore-watch .next --cls src/main.ts",
+    "dev:debug": "cross-env tsnd --debug --watch --project tsconfig.server.json --ignore-watch .next --cls src/main.ts",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -33,10 +34,12 @@
     "qrcode.react": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-native-sqlite-storage": "file:./shims/react-native-sqlite-storage",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
-    "typeorm": "^0.3.7"
+    "smooth-signature": "^1.0.13",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",

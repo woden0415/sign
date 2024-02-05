@@ -1,8 +1,10 @@
 import { Column, Entity, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from 'typeorm';
 
 export enum EnumSignStatus {
-  initial = 'initial',
-  signing = 'doing',
+  initial= 'initial',
+  signing='signing',
+  overdue= 'overdue',
+  cancel = 'cancel',
   done = 'done'
 }
 
@@ -11,10 +13,15 @@ export class Sign {
   @PrimaryGeneratedColumn('increment', { comment: '签字id, 自动增加' })
   id: number;
 
-  @Column({ nullable: true, comment: '签字的内容,base64存储' })
+  @Column({ type:'text', nullable: true, comment: '签字的内容,base64存储' })
   content: string;
 
-  @Column({ type: 'enum', default: EnumSignStatus.initial, enum: EnumSignStatus, comment: '状态, initial初始化, signing签字中, done签字完成' })
+  @Column({
+    type: 'enum', 
+    default: EnumSignStatus.initial, 
+    enum: EnumSignStatus, 
+    comment: '状态, initial初始化, signing签字中, overdue超时, cancel取消, done签字完成'
+  })
   status: EnumSignStatus
 
   @Column({ name: 'create_by', comment: '创建人' })

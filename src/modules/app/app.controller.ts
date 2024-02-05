@@ -11,7 +11,7 @@ export class AppController {
   ) { }
 
   @Get('/')
-  getHello(@Req() req, @Res() res): string {
+  getHello(): string {
     return this.appService.getHello();
   }
 

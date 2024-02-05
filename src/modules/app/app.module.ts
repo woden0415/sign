@@ -16,13 +16,14 @@ import { NextMiddleware } from '../next/next.middleware';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'root',
-      database: 'gas',
+      password: 'wangdong',
+      database: 'sign',
       synchronize: true,
       entities: [Sign],
       migrations: [],
       subscribers: [],
-    })],
+    })
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
