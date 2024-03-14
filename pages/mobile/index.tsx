@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 import style from './styles/mobile.module.css'
-import SmoothSignature from "smooth-signature";
+import SmoothSignature from "../libs/smooth-signature";
 import { useRef } from 'react';
 import { apiPostSignFindOne, apiPostSignUpdate } from "pages/api";
 import { EnumSignStatus, Sign } from "src/modules/sign/Sign.entity";

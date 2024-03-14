@@ -34,7 +34,8 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "pages/libs/smooth-signature.js"
   ],
   "exclude": [
     "node_modules"
